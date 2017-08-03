@@ -1,0 +1,70 @@
+<script src="popup/jquery.bpopup.min.js"></script>
+<script src="jquery/jquery-ui.min.js"></script>
+
+<script>
+    function popup(title, content, positionX, positionY) {
+        var options;
+        options = {modal: false, modalColor: "xx", modalClose: false, follow: [true, true], position: ['auto', 'auto']};
+
+        $(".popup .titleText").html(title);
+        $(".popup .content").html(content);
+
+        var popup = $(".popup");
+        popup.draggable() ;
+        popup.bPopup(options);
+    }
+</script>
+
+<style type="text/css">
+
+    .popup {
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 55px 5px #3a3a3a;
+        display: none;
+        min-width: 300px;
+        padding: 15px 20px 20px 10px;
+    }
+
+    .popup .title {
+        clear: both;
+        border: 4px solid #900000;
+        color: #900000;
+        /*color:  black;*/
+        font-size: 24px;
+        margin: 0 0 0 7px;
+        padding: 3px 0 3px 10px;
+        border-radius: 5px;
+        /*font-weight: bold;*/
+    }
+
+    .popup a.close {
+        /*background: url("popup/close-button.png") no-repeat scroll right center transparent;*/
+        float: right;
+        height: 30px;
+        width: 30px;
+        margin: -30px -30px -10px 0;
+        cursor: pointer;
+        border-bottom: 0;
+    }
+
+    .popup .content {
+        max-width: 750px;
+        clear: both;
+        margin: 10px 5px 5px 10px;
+        overflow: auto;
+    }
+
+
+</style>
+
+<div class="popup">
+    <div class="title"><span class="titleText">No alert (so far)</span> <a class="close"></a></div>
+    <div class="content">Information</div>
+</div>
+
+
+
+
+
+

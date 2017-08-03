@@ -1,0 +1,27 @@
+INIT_OBSERVATION
+{
+
+    "source": {
+            "type": "known",
+            "name": "shop.ex",
+            "IPV4": "100.64.8.17"
+    },
+
+    "target": {
+            "type": "host",
+            "name": "news.ex",
+            "IPV4": "100.64.8.33"
+    },
+
+     "what": {
+            "type": "alert",
+            "description": "SQLi"
+     },
+
+     "evidence": {
+            "type": "logs",
+            "description": "SQL command 'or 1=1' found in URL"
+     }
+}
+END_OBSERVATION
+

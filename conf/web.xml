@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<web-app>
+
+
+    <display-name>EVE - Event Visualization Environment</display-name>
+
+    <!--Login-->
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Monitoring Team</realm-name>
+    </login-config>
+
+
+    <security-role>
+        <role-name>monitoring</role-name>
+    </security-role>
+
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Visualization resources for monitoring team</web-resource-name>
+            <!--<url-pattern>/notifier.jsp</url-pattern>-->
+            <!--<url-pattern>/gtn.jsp</url-pattern>-->
+        </web-resource-collection>
+
+        <auth-constraint>
+            <role-name>monitoring</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+
+    <!--Session-->
+    <session-config>
+        <session-timeout>30</session-timeout>
+        <tracking-mode>COOKIE</tracking-mode>
+        <cookie-config>
+            <secure>false</secure>
+        </cookie-config>
+    </session-config>
+
+
+    <!--Database-->
+    <env-entry>
+        <env-entry-name>JPA_persistenceUnit</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>COE</env-entry-value>
+    </env-entry>
+
+    <!-- URL to EVE -->
+    <env-entry>
+        <env-entry-name>URL_TO_EVE</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <!--<env-entry-value>100.64.9.44:7777</env-entry-value>-->
+        <env-entry-value>localhost:7777</env-entry-value>
+    </env-entry>
+
+</web-app>
